@@ -52,7 +52,7 @@ public class AppUserController {
         return ResponseEntity.ok(new AuthenticationResponse(jwt));
 
     }
-    //@PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/update")
     public ResponseEntity<UserProfile> update(@RequestBody UpdateRequest updateRequest){
         AppUser appUser = appUserService.update(updateRequest);
